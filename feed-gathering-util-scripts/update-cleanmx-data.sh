@@ -57,11 +57,11 @@ get_new_cleanmx_feed_data() {
     # be run first.
     
     # Clean-MX XMLViruses.php
-    wget http://support.clean-mx.de/clean-mx/xmlviruses.php \
+    wget –quiet http://support.clean-mx.de/clean-mx/xmlviruses.php \
       -O $FEEDDIR/cleanmx/xmlviruses.php
     
     # Clean-MX XMLPhishing.php
-    wget http://support.clean-mx.de/clean-mx/xmlphishing.php \
+    wget –quiet http://support.clean-mx.de/clean-mx/xmlphishing.php \
       -O $FEEDDIR/cleanmx/xmlphishing.php
     
 }

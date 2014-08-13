@@ -2,3 +2,7 @@ This folder contains modified default CIF feed configuration files which are
 designed to work with the related script(s) in the feed-gathering-util-scripts
 folder on this repository.  YOU MUST NOT USE THESE BY DEFAULT UNLESS YOU KNOW
 WHAT YOU ARE DOING!
+
+THESE FILES ARE ALSO PROVIDED AS-IS WITH NO LICENSE.  These files have no
+license terms, so you can use them as you wish without any issues.  The
+related utility scripts, however, are GNU GPL v2 licensed.

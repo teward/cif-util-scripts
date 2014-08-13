@@ -1,0 +1,4 @@
+This folder contains modified default CIF feed configuration files which are
+designed to work with the related script(s) in the feed-gathering-util-scripts
+folder on this repository.  YOU MUST NOT USE THESE BY DEFAULT UNLESS YOU KNOW
+WHAT YOU ARE DOING!

@@ -1,0 +1,51 @@
+The feed-gathering-util-scripts folder contains utility scripts written to
+assist with downloading and storing feed data from a remote feed, to later be
+ingested into CIF.
+
+This FileInventory.txt file contains a breakdown of what scripts are provided,
+what language each script is written in, what the prerequisites for each script
+are, a brief description of what the script does, and the 'complexity' of the
+use of the script and/or modification of the script.
+
+-------------------------------------------------------------------------------
+
+update-cleanmx-data.sh
+======================
+
+Language: Bash
+Prerequisites: wget, and a location on disk to store the data.
+Designed for: CIF v1
+
+Output: Two PHP files obtained from Clean-MX's data.
+
+Description:
+This script is designed to reach out to Clean-MX and obtain the feed data which
+is referenced in the default (but disabled) CleanMX configuration file.  This
+script is designed to be run to download the data locally to the server, and 
+then later have CIF refer to the file paths on the local system to index the
+data.
+
+Use:
+Running the script will reach out to CleanMX and download the data to a path
+on the server.  That 'path' is partly configuratble, by changing the "FEEDDIR="
+line in the script to the base directory.  From that directory, the script will
+then check to see if the base FEEDDIR exists, and if not, will create it.  It
+will then check to see if a 'cleanmx' directory exists in FEEDDIR, and will
+create the directory if it doesn't exist.  It then checks to see if the two
+PHP files (containing XML data from CleanMX) exist, and if they do exist it
+will remove the files (because the same data exists plus newer data in the 
+download that will be done next).  The script then uses 'wget' to reach out and
+download the files and store them locally in the FEEDDIR/cleanmx/ folder.
+
+Warnings:
+A not-too-complicated Bash script which uses Bash functions as definitions of
+actions, rather than a straight linear code execution.  I've put comments in
+where relevant and important.
+
+Script Complexities:
+Use: Very easy.
+Specifying output location: Changing the base directory in which to store the
+feed data is easy, you have to change one line.  Changing the folder paths is
+more difficult and requires additional changes to the code.
+
+-------------------------------------------------------------------------------

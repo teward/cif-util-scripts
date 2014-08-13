@@ -1,0 +1,42 @@
+The cif-data-feed-util-scripts folder contains utility scripts written to
+assist with getting information from CIF feeds such as infrastructure/botnet
+and other such feeds that can be generated, and to do something with that data
+
+This FileInventory.txt file contains a breakdown of what scripts are provided,
+what language each script is written in, what the prerequisites for each script
+are, which version(s) of CIF this has been tested on and confirmed to work, a
+brief description of what the script does, and the 'complexity'* of the use of
+the script or modification of the script.
+
+-------------------------------------------------------------------------------
+
+create-csv-for-all-feeds.sh
+===========================
+
+Language: Bash
+Prerequisites: Configured libcif and cif executable to query a CIF server.
+Designed for: CIF v1
+
+Output: Multiple CSV files with this script as-is
+
+Description:
+This script is designed to create a CSV file for each feed that can be created
+and generated and returned by a CIF server.  These include all the feeds that
+have been detailed on the wiki (such as infrastructure/suspicious, for example)
+
+Use:
+Running the script will query CIF and output all the data to the current
+working directory that you are in on the system.  Therefore, if the script is
+in `/home/user/cif-feed-csvs/` and you execute it from that directory after doing
+a `cd` into that directory, you will have the data output to files located
+inside of the /home/user/cif-feed-csvs folder.
+
+Warnings:
+Very simple, very hackish, and probably could be written better.  It works
+but it's a very simplistic script that could probably be better written.
+
+Script Complexities:
+Use: Very easy.
+Specifying output locations: Impossible without changing the script itself.
+
+-------------------------------------------------------------------------------
